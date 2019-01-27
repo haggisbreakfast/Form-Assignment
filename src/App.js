@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
 import { Yup, object, ref, string, number, array } from 'yup';
 import RadioButtons from './RadioButtons';
+import CheckboxButtons from './CheckboxButtons';
 
 // local imports
 
@@ -176,6 +177,7 @@ class App extends Component {
                     />
                   </FieldContainer>
                   <RadioButtons />
+                  <CheckboxButtons />
                   <ButtonContainer>
                     <SubmitButton type="submit"> Submit</SubmitButton>
                   </ButtonContainer>
