@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
-import { object, ref, string } from 'yup';
+import { object, ref, string, number } from 'yup';
 
 const Global = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
@@ -91,6 +91,10 @@ class App extends Component {
                   .min(6)
                   .max(20)
                   .required('please enter a password'),
+                number: number()
+                  .min(1)
+                  .max(100)
+                  .required('please enter a number'),
               })}
               render={() => (
                 <StyledForm>
@@ -121,6 +125,22 @@ class App extends Component {
                             {form.touched.password &&
                               form.errors.password &&
                               form.errors.password}
+                          </Error>
+                        </div>
+                      )}
+                    />
+                  </FieldContainer>
+                  <FieldContainer>
+                    <Field
+                      name="number"
+                      render={({ field, form }) => (
+                        <div>
+                          <FieldLabel>number</FieldLabel>
+                          <input type="number" {...field} placeholder="" />
+                          <Error>
+                            {form.touched.number &&
+                              form.errors.number &&
+                              form.errors.number}
                           </Error>
                         </div>
                       )}
