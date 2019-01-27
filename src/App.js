@@ -35,8 +35,8 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: 0px 10px 13px -7px #000000,
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  /* height: 400px; */
   justify-content: space-between;
 `;
 
@@ -45,7 +45,7 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   margin: 10px;
   justify-content: space-between;
-  height: 600px;
+  /* height: 600px; */
   /* border: 1px solid red; */
 `;
 const Fields = styled.div`
@@ -55,10 +55,11 @@ const Fields = styled.div`
 
 const FieldContainer = styled.div`
   display: flex;
+  flex-direction: row;
   /* justify-content: flex-start; */
-  justify-content: center;
+  justify-content: flex-start;
   padding: 10px;
-  /* border: solid red 1px; */
+  border: solid red 1px;
 `;
 
 const HeaderContainer = styled.div`
@@ -83,7 +84,7 @@ export const Error = styled.span`
 
 const FieldLabel = styled.label`
   font-size: 16px;
-  margin: 20px;
+  /* margin: 20px; */
 `;
 
 const InputContainer = styled.div``;

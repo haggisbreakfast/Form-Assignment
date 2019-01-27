@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 `;
 
 export const SelectHeader = styled.p``;
@@ -11,6 +12,8 @@ export const SelectHeader = styled.p``;
 export const ChoicesContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
 `;
 
 class CheckboxButtons extends React.Component {

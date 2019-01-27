@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const RadioContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 10px;
 `;
 
 class RadioButtons extends React.Component {
