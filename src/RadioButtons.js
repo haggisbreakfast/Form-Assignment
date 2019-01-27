@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 class RadioButtons extends React.Component {
   select(event) {
