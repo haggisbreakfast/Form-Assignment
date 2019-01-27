@@ -14,11 +14,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // local imports
 
 const Global = createGlobalStyle`
-/* @import url("https://fonts.googleapis.com/css?family=Roboto+Mono"); */
-@import url("https://fonts.googleapis.com/css?family=Kalam|Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+/* @import url("https://fonts.googleapis.com/css?family=Kalam|Roboto+Mono"); */
 body {
-  /* font-family: 'Roboto Mono', monospace; */
-  font-family: 'Kalam', cursive;
+  font-family: 'Roboto Mono', monospace;
+  /* font-family: 'Kalam', cursive; */
 }
 `;
 const PageContainer = styled.div`
@@ -35,8 +35,8 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: 0px 10px 13px -7px #000000,
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
-  width: 283px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   justify-content: space-between;
 `;
 
@@ -46,7 +46,7 @@ const StyledForm = styled(Form)`
   margin: 10px;
   justify-content: space-between;
   height: 600px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 const Fields = styled.div`
   display: flex;
@@ -58,32 +58,42 @@ const FieldContainer = styled.div`
   /* justify-content: flex-start; */
   justify-content: center;
   padding: 10px;
-  border: solid red 1px;
+  /* border: solid red 1px; */
 `;
 
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  border-bottom: 1px dotted #7cd5ff;
 
-  background: linear-gradient(#bfeaff 0%, #7cd5ff 100%);
+  /* background: linear-gradient(#bfeaff 0%, #7cd5ff 100%); */
 `;
 const Header = styled.p`
-  padding: 20px 6px 20px 6px;
-  font-size: 20px;
-  margin: 0px;
+  padding: 40px 10px 40px 6px;
+  font-size: 26px;
+  margin: 6px;
 `;
 
 export const Error = styled.span`
-  color: red;
+  color: gray;
   font-size: 12px;
   min-height: 16px;
 `;
 
 const FieldLabel = styled.label`
-  font-size: 20px;
+  font-size: 16px;
+  margin: 20px;
 `;
 
 const InputContainer = styled.div``;
+
+const StyledInput = styled.input`
+  border-radius: 3px;
+  border: 1px solid #cfd3d7;
+  width: 200px;
+  height: 20px;
+`;
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -92,18 +102,17 @@ const ButtonContainer = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  background: #7cd5ff;
-  /* font-family: 'Roboto Mono', monospace; */
-  font-family: 'Kalam', cursive;
+  border: 1px solid #7cd5ff;
+  font-family: 'Roboto Mono', monospace;
+  /* font-family: 'Kalam', cursive; */
   border-radius: 4px;
   font-size: 18px;
   &:hover {
     opacity: 0.7;
-    background: black;
-    color: #7cd5ff;
+    background: #7cd5ff;
   }
-  height: 40%;
-  width: 80%;
+  height: 30%;
+  width: 40%;
 `;
 
 class App extends Component {
@@ -115,7 +124,7 @@ class App extends Component {
           <FormContainer>
             <HeaderContainer>
               <Header>Create Account</Header>
-              <FontAwesomeIcon icon={faUserPlus} size="1x" color="pink" />
+              <FontAwesomeIcon icon={faUserPlus} size="2x" color="pink" />
             </HeaderContainer>
 
             <Formik
@@ -147,7 +156,7 @@ class App extends Component {
                           <div>
                             <FieldLabel>email</FieldLabel>
                             <InputContainer>
-                              <input
+                              <StyledInput
                                 type="email"
                                 {...field}
                                 placeholder="lorem@ipsum.com"
@@ -169,7 +178,7 @@ class App extends Component {
                           <div>
                             <FieldLabel>password</FieldLabel>
                             <InputContainer>
-                              <input
+                              <StyledInput
                                 type="password"
                                 {...field}
                                 placeholder=""
@@ -191,7 +200,11 @@ class App extends Component {
                           <div>
                             <FieldLabel>number</FieldLabel>
                             <InputContainer>
-                              <input type="number" {...field} placeholder="" />
+                              <StyledInput
+                                type="number"
+                                {...field}
+                                placeholder=""
+                              />
                             </InputContainer>
                             <Error>
                               {form.touched.number &&

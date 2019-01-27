@@ -1,4 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SelectHeader = styled.p``;
+
+export const ChoicesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
 class CheckboxButtons extends React.Component {
   select(event) {
@@ -8,9 +21,19 @@ class CheckboxButtons extends React.Component {
   render() {
     return (
       <div onChange={this.select.bind(this)}>
-        <input type="checkbox" value="pizza" name="fav food" /> Pizza
-        <input type="checkbox" value="sushi" name="fav food" /> Sushi
-        <input type="checkbox" value="sushi" name="fav food" /> Salad
+        <CheckboxContainer>
+          <SelectHeader>Please pick all that apply</SelectHeader>
+          <ChoicesContainer>
+            <input type="checkbox" value="lorem" name="lorem ipsum" /> Lorem
+            <input type="checkbox" value="ipsum" name="lorem ipsum" /> Ipsum
+            <input
+              type="checkbox"
+              value="lorem ipsum"
+              name="lorem ipsum"
+            />{' '}
+            Lorem Ipsum
+          </ChoicesContainer>
+        </CheckboxContainer>
       </div>
     );
   }
