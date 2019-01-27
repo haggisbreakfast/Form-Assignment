@@ -26,12 +26,25 @@ const FormContainer = styled.div`
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
   width: 283px;
   height: 600px;
+  border: 1px solid red;
+  justify-content: space-between;
 `;
 
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   margin: 20px;
+  justify-content: flex-start;
+  border: 1px solid red;
+  height: 600px;
+`;
+
+const FieldContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid red;
+  padding: 20px;
 `;
 
 const HeaderContainer = styled.div`
@@ -81,34 +94,38 @@ class App extends Component {
               })}
               render={() => (
                 <StyledForm>
-                  <Field
-                    name="email"
-                    render={({ field, form }) => (
-                      <div>
-                        <FieldLabel>email</FieldLabel>
-                        <input type="email" {...field} placeholder="" />
-                        <Error>
-                          {form.touched.email &&
-                            form.errors.email &&
-                            form.errors.email}
-                        </Error>
-                      </div>
-                    )}
-                  />
-                  <Field
-                    name="password"
-                    render={({ field, form }) => (
-                      <div>
-                        <FieldLabel>password</FieldLabel>
-                        <input type="password" {...field} placeholder="" />
-                        <Error>
-                          {form.touched.password &&
-                            form.errors.password &&
-                            form.errors.password}
-                        </Error>
-                      </div>
-                    )}
-                  />
+                  <FieldContainer>
+                    <Field
+                      name="email"
+                      render={({ field, form }) => (
+                        <div>
+                          <FieldLabel>email</FieldLabel>
+                          <input type="email" {...field} placeholder="" />
+                          <Error>
+                            {form.touched.email &&
+                              form.errors.email &&
+                              form.errors.email}
+                          </Error>
+                        </div>
+                      )}
+                    />
+                  </FieldContainer>
+                  <FieldContainer>
+                    <Field
+                      name="password"
+                      render={({ field, form }) => (
+                        <div>
+                          <FieldLabel>password</FieldLabel>
+                          <input type="password" {...field} placeholder="" />
+                          <Error>
+                            {form.touched.password &&
+                              form.errors.password &&
+                              form.errors.password}
+                          </Error>
+                        </div>
+                      )}
+                    />
+                  </FieldContainer>
                 </StyledForm>
               )}
             />
