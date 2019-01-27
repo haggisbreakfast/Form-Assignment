@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 class RadioButtons extends React.Component {
-  setGender(event) {
+  select(event) {
     console.log(event.target.value);
   }
 
   render() {
     return (
-      <div onChange={this.setGender.bind(this)}>
-        <input type="radio" value="MALE" name="gender" /> Male
-        <input type="radio" value="FEMALE" name="gender" /> Female
+      <div onChange={this.select.bind(this)}>
+        <input type="radio" value="pizza" name="fav food" /> Pizza
+        <input type="radio" value="sushi" name="fav food" /> Sushi
       </div>
     );
   }
