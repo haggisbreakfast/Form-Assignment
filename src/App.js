@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Field, FieldProps, Form, Formik, FormikProps } from 'formik';
-import { object, ref, string, number } from 'yup';
+import { Yup, object, ref, string, number, array } from 'yup';
+import RadioButtons from './RadioButtons';
+
+// local imports
 
 const Global = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
@@ -26,45 +29,64 @@ const FormContainer = styled.div`
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
   width: 283px;
   height: 600px;
-  border: 1px solid red;
   justify-content: space-between;
 `;
 
 const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  justify-content: flex-start;
-  border: 1px solid red;
+  margin: 10px;
+  /* justify-content: flex-start; */
   height: 600px;
 `;
 
 const FieldContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid red;
-  padding: 20px;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  padding: 10px;
 `;
 
 const HeaderContainer = styled.div`
   background: linear-gradient(#bfeaff 0%, #7cd5ff 100%);
 `;
-const Header = styled.h1`
+const Header = styled.p`
   padding: 20px 6px 20px 6px;
-  font-size: 20x;
+  font-size: 20px;
   margin: 0px;
 `;
 
 export const Error = styled.span`
-  color: grey;
+  color: red;
   font-size: 12px;
   min-height: 16px;
 `;
 
 const FieldLabel = styled.label`
-  margin-bottom: 5px;
   font-size: 16px;
+`;
+
+const InputContainer = styled.div``;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+
+  height: 100px;
+`;
+
+const SubmitButton = styled.button`
+  background: #7cd5ff;
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 4px;
+  font-size: 18px;
+  &:hover {
+    opacity: 0.7;
+    background: black;
+    color: #7cd5ff;
+  }
+  height: 40%;
+  width: 80%;
 `;
 
 class App extends Component {
@@ -82,6 +104,7 @@ class App extends Component {
               initialValues={{
                 email: '',
                 password: '',
+                number: 0,
               }}
               validationSchema={object().shape({
                 email: string()
@@ -104,7 +127,9 @@ class App extends Component {
                       render={({ field, form }) => (
                         <div>
                           <FieldLabel>email</FieldLabel>
-                          <input type="email" {...field} placeholder="" />
+                          <InputContainer>
+                            <input type="email" {...field} placeholder="" />
+                          </InputContainer>
                           <Error>
                             {form.touched.email &&
                               form.errors.email &&
@@ -120,7 +145,9 @@ class App extends Component {
                       render={({ field, form }) => (
                         <div>
                           <FieldLabel>password</FieldLabel>
-                          <input type="password" {...field} placeholder="" />
+                          <InputContainer>
+                            <input type="password" {...field} placeholder="" />
+                          </InputContainer>
                           <Error>
                             {form.touched.password &&
                               form.errors.password &&
@@ -136,7 +163,9 @@ class App extends Component {
                       render={({ field, form }) => (
                         <div>
                           <FieldLabel>number</FieldLabel>
-                          <input type="number" {...field} placeholder="" />
+                          <InputContainer>
+                            <input type="number" {...field} placeholder="" />
+                          </InputContainer>
                           <Error>
                             {form.touched.number &&
                               form.errors.number &&
@@ -146,6 +175,10 @@ class App extends Component {
                       )}
                     />
                   </FieldContainer>
+                  <RadioButtons />
+                  <ButtonContainer>
+                    <SubmitButton type="submit"> Submit</SubmitButton>
+                  </ButtonContainer>
                 </StyledForm>
               )}
             />
