@@ -4,9 +4,9 @@ import styled from 'styled-components';
 export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 1px solid orange;
+  align-items: flex-start;
   height: 25%;
+  padding: 10px 20px;
 `;
 
 export const SelectHeader = styled.p``;
@@ -14,8 +14,15 @@ export const SelectHeader = styled.p``;
 export const ChoicesContainer = styled.div`
   display: flex;
   flex-direction: row;
+  font-size: 14px;
+  width: 100%;
   justify-content: center;
-  align-items: space-between;
+`;
+
+export const Choice = styled.div`
+  display: flex;
+  border: 1px solid pink;
+  margin: 10px;
 `;
 
 class CheckboxButtons extends React.Component {
@@ -29,14 +36,16 @@ class CheckboxButtons extends React.Component {
         <CheckboxContainer>
           <SelectHeader>Please pick all that apply</SelectHeader>
           <ChoicesContainer>
-            <input type="checkbox" value="lorem" name="lorem ipsum" /> Lorem
-            <input type="checkbox" value="ipsum" name="lorem ipsum" /> Ipsum
-            <input
-              type="checkbox"
-              value="lorem ipsum"
-              name="lorem ipsum"
-            />{' '}
-            Lorem Ipsum
+            <Choice>
+              <input type="checkbox" value="lorem" name="lorem ipsum" /> Lorem
+            </Choice>
+            <Choice>
+              <input type="checkbox" value="ipsum" name="lorem ipsum" /> Ipsum
+            </Choice>
+            <Choice>
+              <input type="checkbox" value="lorem ipsum" name="lorem ipsum" />{' '}
+              Lorem Ipsum
+            </Choice>
           </ChoicesContainer>
         </CheckboxContainer>
       </div>

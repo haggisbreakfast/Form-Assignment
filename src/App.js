@@ -27,7 +27,7 @@ const PageContainer = styled.div`
 `;
 
 const FormContainer = styled.div`
-  margin: 20px;
+  margin: 60px;
   display: flex;
   flex-direction: column;
   border: 2px solid #cfd3d7;
@@ -37,6 +37,7 @@ const FormContainer = styled.div`
   min-width: 400px;
   /* height: 400px; */
   justify-content: space-between;
+
   padding: 20px 30px 20px 30px;
 `;
 
@@ -61,8 +62,6 @@ const StyledForm = styled(Form)`
   flex-direction: column;
   margin: 10px;
   justify-content: space-between;
-  /* height: 600px; */
-  border: 1px solid red;
 `;
 const FieldContainer = styled.div`
   display: flex;
@@ -81,7 +80,6 @@ const FieldLabel = styled.label`
 const Fields = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
 
   /* padding: 40px 0px; */
 `;

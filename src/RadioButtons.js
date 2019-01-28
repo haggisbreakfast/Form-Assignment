@@ -3,6 +3,7 @@ import {
   SelectHeader,
   ChoicesContainer,
   CheckboxContainer,
+  Choice,
 } from './CheckboxButtons';
 
 class RadioButtons extends React.Component {
@@ -16,8 +17,16 @@ class RadioButtons extends React.Component {
         <CheckboxContainer>
           <SelectHeader>Please select one of the following</SelectHeader>
           <ChoicesContainer>
-            <input type="radio" value="lorem" name="lorem ipsum" /> Lorem
-            <input type="radio" value="ipsum" name="lorem ipsum" /> Ipsum
+            <Choice>
+              <input type="radio" value="lorem" name="lorem ipsum" /> Lorem
+            </Choice>
+            <Choice>
+              <input type="radio" value="ipsum" name="lorem ipsum" /> Ipsum
+            </Choice>
+            <Choice>
+              <input type="radio" value="lorem ipsum" name="lorem ipsum" />{' '}
+              Lorem Ipsum
+            </Choice>
           </ChoicesContainer>
         </CheckboxContainer>
       </div>
