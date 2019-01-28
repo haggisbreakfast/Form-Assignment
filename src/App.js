@@ -23,6 +23,7 @@ body {
 `;
 const PageContainer = styled.div`
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
 `;
@@ -35,31 +36,10 @@ const FormContainer = styled.div`
   border-radius: 4px;
   box-shadow: 0px 10px 13px -7px #000000,
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
-  width: 500px;
+  min-width: 400px;
   /* height: 400px; */
   justify-content: space-between;
-`;
-
-const StyledForm = styled(Form)`
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  justify-content: space-between;
-  /* height: 600px; */
-  /* border: 1px solid red; */
-`;
-const Fields = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const FieldContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  /* justify-content: flex-start; */
-  justify-content: flex-start;
-  padding: 10px;
-  border: solid red 1px;
+  padding: 20px 30px 20px 30px;
 `;
 
 const HeaderContainer = styled.div`
@@ -70,30 +50,54 @@ const HeaderContainer = styled.div`
 
   /* background: linear-gradient(#bfeaff 0%, #7cd5ff 100%); */
 `;
+
 const Header = styled.p`
   padding: 40px 10px 40px 6px;
   font-size: 26px;
   margin: 6px;
 `;
 
-export const Error = styled.span`
-  color: gray;
-  font-size: 12px;
-  min-height: 16px;
+const StyledForm = styled(Form)`
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  justify-content: space-between;
+  /* height: 600px; */
+  /* border: 1px solid red; */
+`;
+
+export const FieldContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: flex-start;
+  border: 1px solid green;
+  padding: 5px 20px;
 `;
 
 const FieldLabel = styled.label`
   font-size: 16px;
+  margin: 5px;
   /* margin: 20px; */
 `;
 
-const InputContainer = styled.div``;
+const Fields = styled.div`
+  display: flex;
+  flex-direction: column;
+  border: 1px solid purple;
+`;
 
 const StyledInput = styled.input`
   border-radius: 3px;
   border: 1px solid #cfd3d7;
-  width: 200px;
+  width: 80%;
   height: 20px;
+`;
+
+const Error = styled.span`
+  color: gray;
+  font-size: 12px;
+  min-height: 16px;
 `;
 
 const ButtonContainer = styled.div`
@@ -150,72 +154,68 @@ class App extends Component {
               render={() => (
                 <StyledForm>
                   <Fields>
-                    <FieldContainer>
-                      <Field
-                        name="email"
-                        render={({ field, form }) => (
-                          <div>
-                            <FieldLabel>email</FieldLabel>
-                            <InputContainer>
-                              <StyledInput
-                                type="email"
-                                {...field}
-                                placeholder="lorem@ipsum.com"
-                              />
-                            </InputContainer>
-                            <Error>
-                              {form.touched.email &&
-                                form.errors.email &&
-                                form.errors.email}
-                            </Error>
-                          </div>
-                        )}
-                      />
-                    </FieldContainer>
-                    <FieldContainer>
-                      <Field
-                        name="password"
-                        render={({ field, form }) => (
-                          <div>
-                            <FieldLabel>password</FieldLabel>
-                            <InputContainer>
-                              <StyledInput
-                                type="password"
-                                {...field}
-                                placeholder=""
-                              />
-                            </InputContainer>
-                            <Error>
-                              {form.touched.password &&
-                                form.errors.password &&
-                                form.errors.password}
-                            </Error>
-                          </div>
-                        )}
-                      />
-                    </FieldContainer>
-                    <FieldContainer>
-                      <Field
-                        name="number"
-                        render={({ field, form }) => (
-                          <div>
-                            <FieldLabel>number</FieldLabel>
-                            <InputContainer>
-                              <StyledInput
-                                type="number"
-                                {...field}
-                                placeholder=""
-                              />
-                            </InputContainer>
-                            <Error>
-                              {form.touched.number &&
-                                form.errors.number &&
-                                form.errors.number}
-                            </Error>
-                          </div>
-                        )}
-                      />
-                    </FieldContainer>
+                    <Field
+                      name="email"
+                      render={({ field, form }) => (
+                        <FieldContainer>
+                          <FieldLabel>email</FieldLabel>
+
+                          <StyledInput
+                            type="email"
+                            {...field}
+                            placeholder="lorem@ipsum.com"
+                          />
+
+                          <Error>
+                            {form.touched.email &&
+                              form.errors.email &&
+                              form.errors.email}
+                          </Error>
+                        </FieldContainer>
+                      )}
+                    />
+
+                    <Field
+                      name="password"
+                      render={({ field, form }) => (
+                        <FieldContainer>
+                          <FieldLabel>password</FieldLabel>
+
+                          <StyledInput
+                            type="password"
+                            {...field}
+                            placeholder=""
+                          />
+
+                          <Error>
+                            {form.touched.password &&
+                              form.errors.password &&
+                              form.errors.password}
+                          </Error>
+                        </FieldContainer>
+                      )}
+                    />
+
+                    <Field
+                      name="number"
+                      render={({ field, form }) => (
+                        <FieldContainer>
+                          <FieldLabel>number</FieldLabel>
+
+                          <StyledInput
+                            type="number"
+                            {...field}
+                            placeholder=""
+                          />
+
+                          <Error>
+                            {form.touched.number &&
+                              form.errors.number &&
+                              form.errors.number}
+                          </Error>
+                        </FieldContainer>
+                      )}
+                    />
                   </Fields>
                   <RadioButtons />
                   <CheckboxButtons />
