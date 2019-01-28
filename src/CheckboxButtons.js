@@ -34,7 +34,7 @@ class CheckboxButtons extends React.Component {
     return (
       <div onChange={this.select.bind(this)}>
         <CheckboxContainer>
-          <SelectHeader>please pick all that apply:</SelectHeader>
+          <SelectHeader>please select all that apply:</SelectHeader>
           <ChoicesContainer>
             <Choice>
               <input type="checkbox" value="lorem" name="lorem ipsum" /> lorem
