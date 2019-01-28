@@ -45,14 +45,15 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px dotted #7cd5ff;
-  padding: 0px 10px;
+  border-bottom: 2px dotted #7cd5ff;
+
+  padding: 10px;
 
   /* background: linear-gradient(#bfeaff 0%, #7cd5ff 100%); */
 `;
 
 const Header = styled.p`
-  padding: 40px 10px 40px 6px;
+  /* padding: 20px 10px 40px 6px; */
   font-size: 26px;
   margin: 6px;
 `;
@@ -66,7 +67,7 @@ const StyledForm = styled(Form)`
 const FieldContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0px;
+  /* margin: 0px; */
   align-items: flex-start;
   padding: 0px 20px;
 `;
@@ -77,24 +78,19 @@ const FieldLabel = styled.label`
   /* margin: 20px; */
 `;
 
-const Fields = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  /* padding: 40px 0px; */
-`;
-
 const StyledInput = styled.input`
   border-radius: 3px;
   border: 1px solid #cfd3d7;
-  width: 80%;
+  width: 90%;
   height: 20px;
+  padding: 4px;
 `;
 
 const Error = styled.span`
-  color: #7cd5ff;
   font-size: 12px;
   min-height: 16px;
+  color: #3f7fbf;
+  /* color: #6196cb; */
 `;
 
 const ButtonContainer = styled.div`
@@ -105,7 +101,7 @@ const ButtonContainer = styled.div`
 `;
 
 const SubmitButton = styled.button`
-  border: 1px solid #7cd5ff;
+  border: 2px solid #7cd5ff;
   font-family: 'Roboto Mono', monospace;
   /* font-family: 'Kalam', cursive; */
   border-radius: 4px;
@@ -137,87 +133,83 @@ class App extends Component {
               }}
               validationSchema={object().shape({
                 email: string()
-                  .email('please enter a valid email')
-                  .required('please enter an email'),
+                  .email('uh-oh this is not a valid email!')
+                  .required('looks like you forgot your email!'),
                 password: string()
-                  .min(6)
-                  .max(20)
-                  .required('please enter a password'),
+                  .min(6, 'make sure your password has 6+ characters!')
+                  .max(20, 'this is a little long! 20 or less please!')
+                  .required('whoa there you need a password!'),
                 number: number()
-                  .min(1)
+                  .min(1, 'whoops this has to be more than 1')
                   .max(100)
                   .required('please enter a number'),
               })}
               render={() => (
                 <StyledForm>
-                  <Fields>
-                    <Field
-                      name="email"
-                      render={({ field, form }) => (
-                        <FieldContainer>
-                          <FieldLabel>email</FieldLabel>
+                  {/* <Fields> */}
+                  <Field
+                    name="email"
+                    render={({ field, form }) => (
+                      <FieldContainer>
+                        <FieldLabel>email</FieldLabel>
 
-                          <StyledInput
-                            type="email"
-                            {...field}
-                            placeholder="lorem@ipsum.com"
-                          />
+                        <StyledInput
+                          type="email"
+                          {...field}
+                          placeholder="lorem@ipsum.com"
+                        />
 
-                          <Error>
-                            {form.touched.email &&
-                              form.errors.email &&
-                              form.errors.email}
-                          </Error>
-                        </FieldContainer>
-                      )}
-                    />
+                        <Error>
+                          {form.touched.email &&
+                            form.errors.email &&
+                            form.errors.email}
+                        </Error>
+                      </FieldContainer>
+                    )}
+                  />
 
-                    <Field
-                      name="password"
-                      render={({ field, form }) => (
-                        <FieldContainer>
-                          <FieldLabel>password</FieldLabel>
+                  <Field
+                    name="password"
+                    render={({ field, form }) => (
+                      <FieldContainer>
+                        <FieldLabel>password</FieldLabel>
 
-                          <StyledInput
-                            type="password"
-                            {...field}
-                            placeholder=""
-                          />
+                        <StyledInput
+                          type="password"
+                          {...field}
+                          placeholder=""
+                        />
 
-                          <Error>
-                            {form.touched.password &&
-                              form.errors.password &&
-                              form.errors.password}
-                          </Error>
-                        </FieldContainer>
-                      )}
-                    />
+                        <Error>
+                          {form.touched.password &&
+                            form.errors.password &&
+                            form.errors.password}
+                        </Error>
+                      </FieldContainer>
+                    )}
+                  />
 
-                    <Field
-                      name="number"
-                      render={({ field, form }) => (
-                        <FieldContainer>
-                          <FieldLabel>number</FieldLabel>
+                  <Field
+                    name="number"
+                    render={({ field, form }) => (
+                      <FieldContainer>
+                        <FieldLabel>how many lorem ipsums?</FieldLabel>
 
-                          <StyledInput
-                            type="number"
-                            {...field}
-                            placeholder=""
-                          />
+                        <StyledInput type="number" {...field} placeholder="" />
 
-                          <Error>
-                            {form.touched.number &&
-                              form.errors.number &&
-                              form.errors.number}
-                          </Error>
-                        </FieldContainer>
-                      )}
-                    />
-                  </Fields>
+                        <Error>
+                          {form.touched.number &&
+                            form.errors.number &&
+                            form.errors.number}
+                        </Error>
+                      </FieldContainer>
+                    )}
+                  />
+                  {/* </Fields> */}
                   <RadioButtons />
                   <CheckboxButtons />
                   <ButtonContainer>
-                    <SubmitButton type="submit"> Submit</SubmitButton>
+                    <SubmitButton type="submit"> submit</SubmitButton>
                   </ButtonContainer>
                 </StyledForm>
               )}
