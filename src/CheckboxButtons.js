@@ -8,7 +8,9 @@ export const CheckboxContainer = styled.div`
   padding: 0px 20px;
 `;
 
-export const SelectHeader = styled.p``;
+export const SelectHeader = styled.p`
+  margin-bottom: 0px;
+`;
 
 export const ChoicesContainer = styled.div`
   display: flex;
