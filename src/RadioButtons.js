@@ -1,12 +1,9 @@
 import React from 'react';
-import { SelectHeader, ChoicesContainer } from './CheckboxButtons';
-import FieldContainer from './App';
-
-// const FieldContainer = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   margin: 10px;
-// `;
+import {
+  SelectHeader,
+  ChoicesContainer,
+  CheckboxContainer,
+} from './CheckboxButtons';
 
 class RadioButtons extends React.Component {
   select(event) {
@@ -16,13 +13,13 @@ class RadioButtons extends React.Component {
   render() {
     return (
       <div onChange={this.select.bind(this)}>
-        <FieldContainer>
+        <CheckboxContainer>
           <SelectHeader>Please select one of the following</SelectHeader>
           <ChoicesContainer>
             <input type="radio" value="lorem" name="lorem ipsum" /> Lorem
             <input type="radio" value="ipsum" name="lorem ipsum" /> Ipsum
           </ChoicesContainer>
-        </FieldContainer>
+        </CheckboxContainer>
       </div>
     );
   }

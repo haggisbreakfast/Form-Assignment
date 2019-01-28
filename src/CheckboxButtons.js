@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CheckboxContainer = styled.div`
+export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  border: 1px solid orange;
+  height: 25%;
 `;
 
 export const SelectHeader = styled.p``;

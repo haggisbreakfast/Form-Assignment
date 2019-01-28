@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Field, Form, Formik } from 'formik';
 import { object, string, number } from 'yup';
-import RadioButtons from './RadioButtons';
-import CheckboxButtons from './CheckboxButtons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
-// import { library, IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-// library.add(faUserPlus);
+import './App.css';
+import RadioButtons from './RadioButtons';
+import CheckboxButtons from './CheckboxButtons';
 
 // local imports
 
@@ -45,8 +43,9 @@ const FormContainer = styled.div`
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-bottom: 1px dotted #7cd5ff;
+  padding: 0px 10px;
 
   /* background: linear-gradient(#bfeaff 0%, #7cd5ff 100%); */
 `;
@@ -63,16 +62,14 @@ const StyledForm = styled(Form)`
   margin: 10px;
   justify-content: space-between;
   /* height: 600px; */
-  /* border: 1px solid red; */
+  border: 1px solid red;
 `;
-
-export const FieldContainer = styled.div`
+const FieldContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 5px;
+  margin: 0px;
   align-items: flex-start;
-  border: 1px solid green;
-  padding: 5px 20px;
+  padding: 0px 20px;
 `;
 
 const FieldLabel = styled.label`
@@ -84,7 +81,9 @@ const FieldLabel = styled.label`
 const Fields = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid purple;
+  border: 1px solid black;
+
+  /* padding: 40px 0px; */
 `;
 
 const StyledInput = styled.input`
@@ -95,7 +94,7 @@ const StyledInput = styled.input`
 `;
 
 const Error = styled.span`
-  color: gray;
+  color: #7cd5ff;
   font-size: 12px;
   min-height: 16px;
 `;
@@ -103,7 +102,8 @@ const Error = styled.span`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  height: 100px;
+  align-items: flex-end;
+  margin-top: 20px;
 `;
 
 const SubmitButton = styled.button`
@@ -131,7 +131,6 @@ class App extends Component {
               <Header>Create Account</Header>
               <FontAwesomeIcon icon={faUserPlus} size="2x" color="pink" />
             </HeaderContainer>
-
             <Formik
               initialValues={{
                 email: '',
