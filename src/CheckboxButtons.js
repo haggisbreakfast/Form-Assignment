@@ -5,8 +5,7 @@ export const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 25%;
-  padding: 10px 20px;
+  padding: 0px 20px;
 `;
 
 export const SelectHeader = styled.p``;
@@ -21,7 +20,6 @@ export const ChoicesContainer = styled.div`
 
 export const Choice = styled.div`
   display: flex;
-  border: 1px solid pink;
   margin: 10px;
 `;
 
@@ -34,17 +32,17 @@ class CheckboxButtons extends React.Component {
     return (
       <div onChange={this.select.bind(this)}>
         <CheckboxContainer>
-          <SelectHeader>Please pick all that apply</SelectHeader>
+          <SelectHeader>please pick all that apply:</SelectHeader>
           <ChoicesContainer>
             <Choice>
-              <input type="checkbox" value="lorem" name="lorem ipsum" /> Lorem
+              <input type="checkbox" value="lorem" name="lorem ipsum" /> lorem
             </Choice>
             <Choice>
-              <input type="checkbox" value="ipsum" name="lorem ipsum" /> Ipsum
+              <input type="checkbox" value="ipsum" name="lorem ipsum" /> ipsum
             </Choice>
             <Choice>
               <input type="checkbox" value="lorem ipsum" name="lorem ipsum" />{' '}
-              Lorem Ipsum
+              lorem ipsum
             </Choice>
           </ChoicesContainer>
         </CheckboxContainer>

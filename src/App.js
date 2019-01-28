@@ -90,7 +90,6 @@ const Error = styled.span`
   font-size: 12px;
   min-height: 16px;
   color: #3f7fbf;
-  /* color: #6196cb; */
 `;
 
 const ButtonContainer = styled.div`

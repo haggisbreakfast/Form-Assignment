@@ -15,17 +15,17 @@ class RadioButtons extends React.Component {
     return (
       <div onChange={this.select.bind(this)}>
         <CheckboxContainer>
-          <SelectHeader>Please select one of the following</SelectHeader>
+          <SelectHeader>please select one of the following:</SelectHeader>
           <ChoicesContainer>
             <Choice>
-              <input type="radio" value="lorem" name="lorem ipsum" /> Lorem
+              <input type="radio" value="lorem" name="lorem ipsum" /> lorem
             </Choice>
             <Choice>
-              <input type="radio" value="ipsum" name="lorem ipsum" /> Ipsum
+              <input type="radio" value="ipsum" name="lorem ipsum" /> ipsum
             </Choice>
             <Choice>
               <input type="radio" value="lorem ipsum" name="lorem ipsum" />{' '}
-              Lorem Ipsum
+              lorem ipsum
             </Choice>
           </ChoicesContainer>
         </CheckboxContainer>
