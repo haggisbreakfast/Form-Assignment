@@ -1,4 +1,5 @@
 import React from 'react';
+// imports local reusable styled components
 import {
   SelectHeader,
   ChoicesContainer,

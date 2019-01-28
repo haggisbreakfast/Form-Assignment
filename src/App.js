@@ -5,20 +5,17 @@ import { object, string, number } from 'yup';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import './App.css';
+// local imports
 import RadioButtons from './RadioButtons';
 import CheckboxButtons from './CheckboxButtons';
 
-// local imports
-
 const Global = createGlobalStyle`
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
-/* @import url("https://fonts.googleapis.com/css?family=Kalam|Roboto+Mono"); */
 body {
   font-family: 'Roboto Mono', monospace;
-  /* font-family: 'Kalam', cursive; */
 }
 `;
+
 const PageContainer = styled.div`
   display: flex;
   flex: 1;
@@ -35,9 +32,7 @@ const FormContainer = styled.div`
   box-shadow: 0px 10px 13px -7px #000000,
     1px 47px 46px -25px rgba(0, 0, 0, 0.43);
   min-width: 400px;
-  /* height: 400px; */
   justify-content: space-between;
-
   padding: 20px 30px 20px 30px;
 `;
 
@@ -46,14 +41,10 @@ const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px dotted #7cd5ff;
-
   padding: 10px;
-
-  /* background: linear-gradient(#bfeaff 0%, #7cd5ff 100%); */
 `;
 
 const Header = styled.p`
-  /* padding: 20px 10px 40px 6px; */
   font-size: 26px;
   margin: 6px;
 `;
@@ -67,7 +58,6 @@ const StyledForm = styled(Form)`
 const FieldContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin: 0px; */
   align-items: flex-start;
   padding: 0px 20px;
 `;
@@ -75,7 +65,6 @@ const FieldContainer = styled.div`
 const FieldLabel = styled.label`
   font-size: 16px;
   margin: 5px;
-  /* margin: 20px; */
 `;
 
 const StyledInput = styled.input`
@@ -102,7 +91,6 @@ const ButtonContainer = styled.div`
 const SubmitButton = styled.button`
   border: 2px solid #7cd5ff;
   font-family: 'Roboto Mono', monospace;
-  /* font-family: 'Kalam', cursive; */
   border-radius: 4px;
   font-size: 18px;
   &:hover {
@@ -145,7 +133,6 @@ class App extends Component {
               })}
               render={() => (
                 <StyledForm>
-                  {/* <Fields> */}
                   <Field
                     name="email"
                     render={({ field, form }) => (
@@ -172,7 +159,6 @@ class App extends Component {
                     render={({ field, form }) => (
                       <FieldContainer>
                         <FieldLabel>password</FieldLabel>
-
                         <StyledInput
                           type="password"
                           {...field}
@@ -204,7 +190,6 @@ class App extends Component {
                       </FieldContainer>
                     )}
                   />
-                  {/* </Fields> */}
                   <RadioButtons />
                   <CheckboxButtons />
                   <ButtonContainer>
